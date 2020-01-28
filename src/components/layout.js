@@ -2,12 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import styled from "styled-components"
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
+    let mainContent
 
     if (location.pathname === rootPath) {
       header = (
@@ -30,6 +32,8 @@ class Layout extends React.Component {
           </Link>
         </h1>
       )
+
+      mainContent = <MainArea>{children}</MainArea>
     } else {
       header = (
         <h3
@@ -48,7 +52,10 @@ class Layout extends React.Component {
           ></Link>
         </h3>
       )
+
+      mainContent = <main>{children}</main>
     }
+
     return (
       <div
         style={{
@@ -59,7 +66,7 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
-        <main>{children}</main>
+        {mainContent}
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
@@ -71,3 +78,11 @@ class Layout extends React.Component {
 }
 
 export default Layout
+
+const MainArea = styled.main`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+`
