@@ -1,17 +1,20 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import kirkhamTheme from "typography-theme-kirkham"
 
-Wordpress2016.overrideThemeStyles = () => {
+kirkhamTheme.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    html: {
+      fontSize: `62.5%`,
+    },
   }
 }
 
-delete Wordpress2016.googleFonts
+delete kirkhamTheme.googleFonts
 
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(kirkhamTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

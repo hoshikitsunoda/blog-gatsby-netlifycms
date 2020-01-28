@@ -45,9 +45,7 @@ class Layout extends React.Component {
               color: `inherit`,
             }}
             to={`/`}
-          >
-            {title}
-          </Link>
+          ></Link>
         </h3>
       )
     }
