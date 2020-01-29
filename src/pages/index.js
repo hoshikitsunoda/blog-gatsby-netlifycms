@@ -1,17 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    // const siteTitle = data.site.siteMetadata.title
     const siteTitle = ".es."
     const posts = data.allMarkdownRemark.edges
 
@@ -24,27 +21,10 @@ class BlogIndex extends React.Component {
           return (
             <Panel key={node.fields.slug}>
               <header>
-                {/* <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3> */}
                 <LinkToPost style={{ boxShadow: `none` }} to={node.fields.slug}>
                   <Thumbnail className="thumbnail" fluid={featuredImgFluid} />
                 </LinkToPost>
-                {/* <small>{node.frontmatter.date}</small> */}
               </header>
-              {/*<section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>*/}
             </Panel>
           )
         })}

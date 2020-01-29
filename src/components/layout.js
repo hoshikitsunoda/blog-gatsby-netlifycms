@@ -12,71 +12,38 @@ class Layout extends React.Component {
   render() {
     const { location, children } = this.props
     const title = ".es."
-    console.log(this.props)
     const rootPath = `${__PATH_PREFIX__}/`
-    const aboutPath = `${__PATH_PREFIX__}/about`
-    const contactPath = `${__PATH_PREFIX__}/contact`
-    let header
+
+    const header = (
+      <h1
+        style={{
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h1>
+    )
+
     let mainContent
+    mainContent = <main>{children}</main>
 
-    if (
-      location.pathname === rootPath ||
-      location.pathname === aboutPath ||
-      location.pathname === contactPath
-    ) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-
+    if (location.pathname === rootPath) {
       mainContent = <MainArea>{children}</MainArea>
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          ></Link>
-        </h3>
-      )
-
-      mainContent = <main>{children}</main>
     }
 
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <Wrapper>
         <header>{header}</header>
         {mainContent}
         <Footer>
@@ -98,12 +65,19 @@ class Layout extends React.Component {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </div>
         </Footer>
-      </div>
+      </Wrapper>
     )
   }
 }
 
 export default Layout
+
+const Wrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(40)};
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+`
 
 const MainArea = styled.main`
   display: flex;
@@ -122,7 +96,9 @@ const Footer = styled.footer`
   padding: 2em;
 
   @media (min-width: 768px) {
-    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: ${rhythm(40)};
   }
 `
 
@@ -137,6 +113,7 @@ const InnerWrapper = styled.div`
 
 const LinkWrap = styled(Link)`
   width: calc(50% - 0.5rem);
+  text-decoration: none;
 `
 
 const AboutBox = styled.div`
