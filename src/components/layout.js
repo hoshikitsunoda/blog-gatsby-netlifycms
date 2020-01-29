@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
 
+import thingsText from "../../content/assets/things.svg"
 import aboutText from "../../content/assets/about.svg"
 import contactText from "../../content/assets/contact.svg"
 
@@ -102,6 +103,7 @@ const MainArea = styled.main`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  background: url(${thingsText}) bottom center no-repeat;
 `
 
 const Footer = styled.footer`

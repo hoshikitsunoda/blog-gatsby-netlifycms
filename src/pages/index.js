@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           let featuredImgFluid =
             node.frontmatter.featuredImage.childImageSharp.fluid
-          console.log(node)
+          console.log(featuredImgFluid)
           return (
             <Panel key={node.fields.slug}>
               <header>
@@ -96,6 +96,5 @@ const LinkToPost = styled(Link)`
 `
 
 const Thumbnail = styled(Img)`
-  background-image: url(${props => props.fluid});
   height: 100%;
 `
