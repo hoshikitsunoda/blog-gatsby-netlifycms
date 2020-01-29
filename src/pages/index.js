@@ -17,9 +17,8 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title=".es." />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
           let featuredImgFluid =
             node.frontmatter.featuredImage.childImageSharp.fluid
           console.log(node)
@@ -35,9 +34,9 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3> */}
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  <Img className="thumbnail" fluid={featuredImgFluid} />
-                </Link>
+                <LinkToPost style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  <Thumbnail className="thumbnail" fluid={featuredImgFluid} />
+                </LinkToPost>
                 {/* <small>{node.frontmatter.date}</small> */}
               </header>
               {/*<section>
@@ -91,4 +90,12 @@ export const pageQuery = graphql`
 
 const Panel = styled.article`
   width: 50%;
+`
+const LinkToPost = styled(Link)`
+  width: 100%;
+`
+
+const Thumbnail = styled(Img)`
+  background-image: url(${props => props.fluid});
+  height: 100%;
 `
