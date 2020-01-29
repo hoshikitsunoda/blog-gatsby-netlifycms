@@ -10,12 +10,20 @@ import contactText from "../../content/assets/contact.svg"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, children } = this.props
+    const title = ".es."
+    console.log(this.props)
     const rootPath = `${__PATH_PREFIX__}/`
+    const aboutPath = `${__PATH_PREFIX__}/about`
+    const contactPath = `${__PATH_PREFIX__}/contact`
     let header
     let mainContent
 
-    if (location.pathname === rootPath) {
+    if (
+      location.pathname === rootPath ||
+      location.pathname === aboutPath ||
+      location.pathname === contactPath
+    ) {
       header = (
         <h1
           style={{
@@ -112,6 +120,10 @@ const Footer = styled.footer`
   right: 0;
   bottom: 0;
   padding: 2em;
+
+  @media (min-width: 768px) {
+    position: relative;
+  }
 `
 
 const InnerWrapper = styled.div`
@@ -132,7 +144,7 @@ const AboutBox = styled.div`
   height: 100%;
   background: #fff url(${aboutText}) bottom center no-repeat;
   background-size: 250%;
-  border: 1px solid #757575;
+  box-shadow: 0px 5px 10px #e0e0e0;
 `
 
 const ContactBox = styled.div`
@@ -140,7 +152,7 @@ const ContactBox = styled.div`
   height: 100%;
   background: #fff url(${contactText}) center center no-repeat;
   background-size: 180%;
-  border: 1px solid #757575;
+  box-shadow: 0px 5px 10px #e0e0e0;
 `
 
 const Subheading = styled.h3`
