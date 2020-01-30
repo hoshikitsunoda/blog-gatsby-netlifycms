@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
 class BlogIndex extends React.Component {
@@ -66,6 +67,14 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+const StyledBackground = styled(BackgroundImage)`
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
 `
 
 const Panel = styled.article`
