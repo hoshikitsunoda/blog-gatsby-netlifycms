@@ -76,4 +76,8 @@ const LinkToPost = styled(Link)`
 
 const Thumbnail = styled(Img)`
   height: 100%;
+
+  img {
+    width: 100%;
+  }
 `
