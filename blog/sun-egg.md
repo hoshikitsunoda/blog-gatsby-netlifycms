@@ -1,7 +1,7 @@
 ---
-path: Sun Egg
-date: 2020-01-30T06:10:51.326Z
+path: sun egg
+date: 2020-01-30T07:20:19.680Z
 thumbnail: /assets/sunegg.jpg
 title: Sun Egg
 ---
-Sun Egg, Acrylic / Posca, 2015
+Sun Egg
