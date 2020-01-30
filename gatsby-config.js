@@ -23,6 +23,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -39,9 +40,16 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`,
+            },
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-netlify-cms-paths`,
         ],
       },
     },

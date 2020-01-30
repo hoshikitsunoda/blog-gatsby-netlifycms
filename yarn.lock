@@ -4840,6 +4840,11 @@ es6-iterator@^2.0.3, es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
+es6-promise@^2.0.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-2.3.0.tgz#96edb9f2fdb01995822b263dd8aadab6748181bc"
+  integrity sha1-lu258v2wGZWCKyY92KratnSBgbw=
+
 es6-promisify@^6.0.0:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.0.2.tgz#525c23725b8510f5f1f2feb5a1fbad93a93e29b4"
@@ -5946,6 +5951,16 @@ gatsby-plugin-manifest@^2.2.39:
     gatsby-core-utils "^1.0.26"
     semver "^5.7.1"
     sharp "^0.23.4"
+
+gatsby-plugin-netlify-cms-paths@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms-paths/-/gatsby-plugin-netlify-cms-paths-1.3.0.tgz#49c93e55efae6c9fc7159df03645af09280040db"
+  integrity sha512-XnpUu14URfD93vC36Z0xn8vx/Qd36rEMfgL2Q5TPgxkZQB9aspPsdOYbprpLCa/PWhFrNtMNFFnbH0McsQaw5g==
+  dependencies:
+    babel-runtime "^6.26.0"
+    read-yaml-promise "^1.0.2"
+    slash "^3.0.0"
+    unist-util-select "^1.5.0"
 
 gatsby-plugin-netlify-cms@^4.1.37:
   version "4.1.37"
@@ -8277,7 +8292,7 @@ js-tokens@^3.0.2:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
-js-yaml@^3.10.0, js-yaml@^3.11.0, js-yaml@^3.12.2, js-yaml@^3.13.1, js-yaml@^3.5.2:
+js-yaml@^3.10.0, js-yaml@^3.11.0, js-yaml@^3.12.2, js-yaml@^3.13.1, js-yaml@^3.5.2, js-yaml@^3.8.2:
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
@@ -11885,6 +11900,22 @@ read-pkg@^2.0.0:
     load-json-file "^2.0.0"
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
+
+read-yaml-promise@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/read-yaml-promise/-/read-yaml-promise-1.0.2.tgz#604b6113f27f773790f4a7462d0427305ed0647b"
+  integrity sha1-YEthE/J/dzeQ9KdGLQQnMF7QZHs=
+  dependencies:
+    es6-promise "^2.0.0"
+    read-yaml "^1.0.0"
+
+read-yaml@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/read-yaml/-/read-yaml-1.1.0.tgz#0d273ac0c95be92230dc0d4c4c4f5b8960a336d6"
+  integrity sha1-DSc6wMlb6SIw3A1MTE9biWCjNtY=
+  dependencies:
+    extend-shallow "^2.0.1"
+    js-yaml "^3.8.2"
 
 read@^1.0.7:
   version "1.0.7"
