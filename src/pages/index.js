@@ -50,11 +50,10 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            path
             date(formatString: "MMMM DD, YYYY")
             title
-            body
-            image {
+            description
+            featuredImage {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
