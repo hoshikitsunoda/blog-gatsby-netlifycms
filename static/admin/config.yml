@@ -2,7 +2,7 @@ backend:
   name: github
   repo: hoshikitsunoda/blog-gatsby-netlifycms
 
-media_folder: static/assets
+media_folder: blog/assets
 public_folder: /assets
 
 collections:
