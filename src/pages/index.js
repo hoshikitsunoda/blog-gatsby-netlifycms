@@ -16,6 +16,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title=".es." />
         {posts.map(({ node }) => {
+          console.log(node.frontmatter)
           let featuredImgFluid =
             node.frontmatter.featuredImage.childImageSharp.fluid
           return (

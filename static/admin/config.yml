@@ -2,6 +2,7 @@ backend:
   name: github
   repo: hoshikitsunoda/blog-gatsby-netlifycms
 
+media_folder_relative: true
 media_folder: static/assets
 public_folder: /assets
 
@@ -11,7 +12,7 @@ collections:
     folder: blog
     create: true
     fields:
-      - { name: date, label: Date, widget: datetime }
-      - { name: description, label: Description, widget: markdown }
-      - { name: title, label: Title, widget: string }
-      - { name: "featuredImage", label: "Featured Image", widget: "image" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
