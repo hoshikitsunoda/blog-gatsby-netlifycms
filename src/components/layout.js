@@ -76,7 +76,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(40)};
-  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  padding: ${rhythm(1.5)};
 `
 
 const MainArea = styled.main`
