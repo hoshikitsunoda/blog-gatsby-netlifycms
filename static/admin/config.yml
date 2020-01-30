@@ -13,6 +13,6 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
-      - { label: Image, name: thumbnail, widget: image }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+      - { label: Image, name: thumbnail, widget: image }
