@@ -21,13 +21,13 @@ class BlogIndex extends React.Component {
           let featuredImgFluid =
             node.frontmatter.featuredImage.childImageSharp.fluid
           return (
-            <Panel key={node.fields.slug}>
+            <article style={{ width: `50%` }} key={node.fields.slug}>
               <header>
                 <LinkToPost style={{ boxShadow: `none` }} to={node.fields.slug}>
                   <Thumbnail className="thumbnail" fluid={featuredImgFluid} />
                 </LinkToPost>
               </header>
-            </Panel>
+            </article>
           )
         })}
       </Layout>
@@ -67,14 +67,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-const StyledBackground = styled(BackgroundImage)`
-  width: 100%;
-  height: 100%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: contain;
 `
 
 const Panel = styled.article`
