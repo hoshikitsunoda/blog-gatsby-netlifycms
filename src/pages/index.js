@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
 class BlogIndex extends React.Component {
@@ -21,13 +20,13 @@ class BlogIndex extends React.Component {
           let featuredImgFluid =
             node.frontmatter.featuredImage.childImageSharp.fluid
           return (
-            <article style={{ width: `50%` }} key={node.fields.slug}>
+            <Panel key={node.fields.slug}>
               <header>
                 <LinkToPost style={{ boxShadow: `none` }} to={node.fields.slug}>
                   <Thumbnail className="thumbnail" fluid={featuredImgFluid} />
                 </LinkToPost>
               </header>
-            </article>
+            </Panel>
           )
         })}
       </Layout>
