@@ -15,6 +15,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title=".es." />
+        <TestArticleElement></TestArticleElement>
         {posts.map(({ node }) => {
           console.log(node.frontmatter)
           let featuredImgFluid =
@@ -71,6 +72,13 @@ export const pageQuery = graphql`
 const Panel = styled.article`
   width: 50%;
 `
+
+const TestArticleElement = styled.article`
+  width: 100px;
+  height: 100px;
+  background-color: red;
+`
+
 const LinkToPost = styled(Link)`
   width: 100%;
 `
