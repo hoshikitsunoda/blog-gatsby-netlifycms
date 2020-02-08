@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import styled from "styled-components"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -37,10 +38,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          <section
-            style={{ padding: `2rem 8rem 8rem` }}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -98,5 +96,17 @@ export const pageQuery = graphql`
         description
       }
     }
+  }
+`
+
+const PostBody = styled.section`
+  padding: 2rem 3rem 8rem;
+
+  > p {
+    font-size: 1.3rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2rem 8rem 8rem;
   }
 `

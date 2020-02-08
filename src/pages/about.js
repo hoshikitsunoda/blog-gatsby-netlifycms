@@ -16,8 +16,7 @@ class AboutPage extends React.Component {
         <h1>About this page</h1>
         <p>
           My name is Hosh'ki Tsunoda. I am a web developer / artist.
-          <br /> This page displays things I like and I do. A lot of records and
-          art.
+          <br /> This page displays things I like. A lot of records and art.
         </p>
         <p>
           Feel free to contact me from <Link to={`/contact`}>Contact Page</Link>
