@@ -6,3 +6,5 @@ title: AfRoMaNtiC
 featuredImage: /assets/frohead4.jpg
 ---
 ![AfRoMaNtiC](/assets/frohead4.jpg "AfRoMaNtiC")
+
+Afromantic, Acrylic and Photoshop Collage, 2016
