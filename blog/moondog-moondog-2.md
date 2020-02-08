@@ -5,6 +5,8 @@ description: Moondog - Moondog 2
 title: Moondog - Moondog 2
 featuredImage: /assets/D3F8BB5D-8D2B-4836-9126-34BBB07D4FAB.jpeg
 ---
+![Moondog](/assets/D3F8BB5D-8D2B-4836-9126-34BBB07D4FAB.jpeg "Moondog 2")
+
 Almost sold this record. I gave it a last listen before putting it up and now it’s back in my collection.
 
 \
