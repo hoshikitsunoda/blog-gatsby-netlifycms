@@ -86,6 +86,11 @@ const MainArea = styled.main`
   align-items: center;
   flex-wrap: wrap;
   background: url(${thingsText}) bottom center no-repeat;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    padding: 0 4rem;
+  }
 `
 
 const Footer = styled.footer`
@@ -94,6 +99,7 @@ const Footer = styled.footer`
   right: 0;
   bottom: 0;
   padding: 2em;
+  background-color: #fff;
 
   @media (min-width: 768px) {
     left: 50%;
@@ -122,6 +128,7 @@ const AboutBox = styled.div`
   background: #fff url(${aboutText}) bottom center no-repeat;
   background-size: 250%;
   box-shadow: 0px 5px 10px #e0e0e0;
+  border-radius: 0.5rem;
 `
 
 const ContactBox = styled.div`
@@ -130,6 +137,7 @@ const ContactBox = styled.div`
   background: #fff url(${contactText}) center center no-repeat;
   background-size: 180%;
   box-shadow: 0px 5px 10px #e0e0e0;
+  border-radius: 0.5rem;
 `
 
 const Subheading = styled.h3`

@@ -16,7 +16,14 @@ class ContactPage extends React.Component {
         <SEO title="Contact" />
         <div>
           <h2>Say Hi!</h2>
-          <form name="contact" method="POST" data-netlify="true">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <p>
               <Input type="text" name="name" placeholder="Your Name" />
             </p>

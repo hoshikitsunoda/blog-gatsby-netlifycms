@@ -56,7 +56,7 @@ export const pageQuery = graphql`
             description
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 800, maxHeight: 800) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -70,7 +70,11 @@ export const pageQuery = graphql`
 
 const Panel = styled.article`
   width: 50%;
-  min-width: 100%;
+  padding: 0.5rem;
+
+  @media (min-width: 768px) {
+    width: 25%;
+  }
 `
 
 const LinkToPost = styled(Link)`
@@ -80,9 +84,11 @@ const LinkToPost = styled(Link)`
 const Thumbnail = styled(Img)`
   height: 100%;
   display: block;
+  border-radius: 0.5rem;
 
   img {
     width: 100%;
     display: block;
+    object-fit: cover;
   }
 `
