@@ -75,6 +75,12 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-lodash`,
+      options: {
+        disabledFeatures: [`shorthands`, `cloning`],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
