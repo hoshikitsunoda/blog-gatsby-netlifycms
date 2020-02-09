@@ -9,6 +9,9 @@ tags:
   - jazz
   - u.s.
 ---
-Tribal psychedelic jam by Don Cherry. Organic Music Society is a perfect name for this album. Sounds so raw and organic to the point I start to feel like I’m listening to a shamanic ritual.
+![Don Cherry - Organic Music Society](/assets/D0326D76-9E2D-4F0A-9EBD-9A88F4ABC07E.jpeg "Don Cherry - Organic Music Society")
+
+\
+A tribal psychedelic jam by Don Cherry. Organic Music Society is a perfect name for this album. Sounds so raw and organic to the point I start to feel like I’m listening to a shamanic ritual.
 
 I’m huge fan of Don Cherry works especially these series with painting covers by Moki Cherry.
