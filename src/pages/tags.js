@@ -3,22 +3,27 @@ import { Link, graphql } from "gatsby"
 
 import { kebabCase } from "lodash"
 
+import Layout from "../components/layout"
 const TagsPage = ({ data }) => {
   const allTags = data.allMarkdownRemark.group
+  const siteTitle = ".es."
+  const location = "/tags"
 
   return (
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {allTags.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Layout location={location} title={siteTitle}>
+      <div>
+        <h1>Tags</h1>
+        <ul>
+          {allTags.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
   )
 }
 

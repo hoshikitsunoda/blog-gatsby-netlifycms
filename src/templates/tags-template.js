@@ -1,30 +1,36 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+import Layout from "../components/layout"
+
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
+  const siteTitle = ".es."
+  const location = "/tags"
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { title, date } = node.frontmatter
-          const { slug } = node.fields
-          return (
-            <li key={slug}>
-              <Link to={slug}>
-                {title} ({date})
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
-      <Link to="/tags">All tags</Link>
-    </div>
+    <Layout location={`${location}/${tag}`} title={siteTitle}>
+      <div>
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const { title, date } = node.frontmatter
+            const { slug } = node.fields
+            return (
+              <li key={slug}>
+                <Link to={slug}>
+                  {title} ({date})
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+        <Link to="/tags">All tags</Link>
+      </div>
+    </Layout>
   )
 }
 
