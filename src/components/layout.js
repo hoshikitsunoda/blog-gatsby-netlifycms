@@ -13,7 +13,6 @@ class Layout extends React.Component {
     const { location, children } = this.props
     const title = ".es."
     const rootPath = `${__PATH_PREFIX__}/`
-    console.log(children)
     const header = (
       <h1
         style={{

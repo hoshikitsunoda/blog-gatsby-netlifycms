@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+import { kebabCase } from "lodash"
+
 const TagsPage = ({ data }) => {
   const allTags = data.allMarkdownRemark.group
 
@@ -10,7 +12,7 @@ const TagsPage = ({ data }) => {
       <ul>
         {allTags.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${tag.fieldValue}/`}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>
