@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import styled from "styled-components"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -15,7 +16,7 @@ const Tags = ({ pageContext, data }) => {
     <Layout location={`${location}/${tag}`} title={siteTitle}>
       <div>
         <h1>{tagHeader}</h1>
-        <ul>
+        <UList>
           {edges.map(({ node }) => {
             const { title, date } = node.frontmatter
             const { slug } = node.fields
@@ -27,7 +28,7 @@ const Tags = ({ pageContext, data }) => {
               </li>
             )
           })}
-        </ul>
+        </UList>
         <Link to="/tags">All tags</Link>
       </div>
     </Layout>
@@ -55,6 +56,16 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+  }
+`
+
+const UList = styled.ul`
+  list-style: none;
+
+  li {
+    a {
+      font-size: 1.3rem;
     }
   }
 `

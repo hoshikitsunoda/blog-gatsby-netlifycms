@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import { kebabCase } from "lodash"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 const TagsPage = ({ data }) => {
@@ -13,7 +14,7 @@ const TagsPage = ({ data }) => {
     <Layout location={location} title={siteTitle}>
       <div>
         <h1>Tags</h1>
-        <ul>
+        <UList>
           {allTags.map(tag => (
             <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
@@ -21,7 +22,7 @@ const TagsPage = ({ data }) => {
               </Link>
             </li>
           ))}
-        </ul>
+        </UList>
       </div>
     </Layout>
   )
@@ -36,6 +37,16 @@ export const pageQuery = graphql`
         fieldValue
         totalCount
       }
+    }
+  }
+`
+
+const UList = styled.ul`
+  list-style: none;
+
+  li {
+    a {
+      font-size: 1.3rem;
     }
   }
 `

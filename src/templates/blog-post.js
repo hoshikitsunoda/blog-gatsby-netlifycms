@@ -40,13 +40,13 @@ class BlogPostTemplate extends React.Component {
             </p>
             {post.frontmatter.tags ? (
               <div className="tags-container">
-                <ul className="taglist">
+                <UList className="taglist">
                   {post.frontmatter.tags.map(tag => (
                     <li key={tag + `tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
-                </ul>
+                </UList>
               </div>
             ) : null}
           </header>
@@ -121,5 +121,20 @@ const PostBody = styled.section`
 
   @media (min-width: 768px) {
     padding: 2rem 8rem 8rem;
+  }
+`
+
+const UList = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+
+  li {
+    padding-right: 1.5rem;
+
+    a {
+      font-size: 1.1rem;
+    }
   }
 `
