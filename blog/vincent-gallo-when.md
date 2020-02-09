@@ -4,6 +4,10 @@ date: 2020-02-08T07:17:38.772Z
 description: Vincent Gallo - When
 title: Vincent Gallo - When
 featuredImage: /assets/EA1897FB-CB56-4870-9538-FAC6F52D2C6D.jpeg
+tags:
+  - record
+  - experimental
+  - u.s.
 ---
 ![Vincent Gallo](/assets/EA1897FB-CB56-4870-9538-FAC6F52D2C6D.jpeg "Vincent Gallo - When")
 

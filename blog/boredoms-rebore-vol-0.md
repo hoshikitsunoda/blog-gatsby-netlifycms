@@ -4,6 +4,10 @@ date: 2020-02-08T07:25:08.577Z
 description: Boredoms - Rebore Vol.0
 title: Boredoms - Rebore Vol.0
 featuredImage: /assets/15A2A897-1E9D-428E-A249-97BBAC2C40BE.jpeg
+tags:
+  - record
+  - ambient
+  - japan
 ---
 ![Boredoms - Rebore Vol.0](/assets/15A2A897-1E9D-428E-A249-97BBAC2C40BE.jpeg "Boredoms - Rebore Vol.0")
 
