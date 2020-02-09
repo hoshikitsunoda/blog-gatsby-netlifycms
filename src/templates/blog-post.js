@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { kebabCase } from "lodash"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    console.log(post.html)
+    console.log(post)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -37,6 +38,17 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date}
             </p>
+            {post.frontmatter.tags ? (
+              <div className="tags-container">
+                <UList className="taglist">
+                  {post.frontmatter.tags.map(tag => (
+                    <li key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </li>
+                  ))}
+                </UList>
+              </div>
+            ) : null}
           </header>
           <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -94,6 +106,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }
@@ -108,5 +121,20 @@ const PostBody = styled.section`
 
   @media (min-width: 768px) {
     padding: 2rem 8rem 8rem;
+  }
+`
+
+const UList = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+
+  li {
+    padding-right: 1.5rem;
+
+    a {
+      font-size: 1.1rem;
+    }
   }
 `
