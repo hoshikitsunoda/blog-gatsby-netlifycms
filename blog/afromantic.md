@@ -4,6 +4,10 @@ date: 2020-01-30T11:18:25.429Z
 description: AfRoMaNtiC
 title: AfRoMaNtiC
 featuredImage: /assets/frohead4.jpg
+tags:
+  - art
+  - painting
+  - collage
 ---
 ![AfRoMaNtiC](/assets/frohead4.jpg "AfRoMaNtiC")
 
