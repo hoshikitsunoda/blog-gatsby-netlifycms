@@ -4,6 +4,10 @@ date: 2020-02-08T22:44:55.470Z
 description: Irmin Schmidt - Filmmusik Vol.3 & 4
 title: Irmin Schmidt - Filmmusik Vol.3 & 4
 featuredImage: /assets/1CDB9B74-8170-4BDA-97A1-79516E12D57E.jpeg
+tags:
+  - record
+  - soundtrack
+  - germany
 ---
 ![Irmin Schmidt - Filmmusik Vol.3 & 4](/assets/1CDB9B74-8170-4BDA-97A1-79516E12D57E.jpeg "Irmin Schmidt - Filmmusik Vol.3 & 4")
 
