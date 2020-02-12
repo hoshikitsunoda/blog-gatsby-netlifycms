@@ -81,6 +81,15 @@ module.exports = {
         disabledFeatures: [`shorthands`, `cloning`],
       },
     },
+    {
+      resolve: "gatsby-plugin-use-dark-mode",
+      options: {
+        classNameDark: "dark-mode",
+        classNameLight: "light-mode",
+        storageKey: "darkMode",
+        minify: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

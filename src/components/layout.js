@@ -1,72 +1,82 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
+import "./layout.css"
 
 import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
+import useDarkMode from "use-dark-mode"
 
 import thingsText from "../../content/assets/things.svg"
 import aboutText from "../../content/assets/about.svg"
 import contactText from "../../content/assets/contact.svg"
 
-class Layout extends React.Component {
-  render() {
-    const { location, children } = this.props
-    const title = ".es."
-    const rootPath = `${__PATH_PREFIX__}/`
-    const header = (
-      <h1
+const Layout = ({ location, children }) => {
+  const title = ".es."
+  const rootPath = `${__PATH_PREFIX__}/`
+  const header = (
+    <h1
+      style={{
+        ...scale(1.5),
+        marginBottom: rhythm(1.5),
+        marginTop: 0,
+      }}
+    >
+      <Link
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
+          boxShadow: `none`,
+          textDecoration: `none`,
+          color: `inherit`,
         }}
+        to={`/`}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
+        {title}
+      </Link>
+    </h1>
+  )
 
-    let mainContent
-    mainContent = <main>{children}</main>
+  let mainContent
+  mainContent = <main>{children}</main>
 
-    if (location.pathname === rootPath) {
-      mainContent = <MainArea>{children}</MainArea>
-    }
-
-    return (
-      <Wrapper>
-        <header>{header}</header>
-        {mainContent}
-        <Footer>
-          <InnerWrapper>
-            <LinkWrap to={`/about`}>
-              <AboutBox>
-                <Subheading>About.</Subheading>
-              </AboutBox>
-            </LinkWrap>
-            <LinkWrap to={`/contact`}>
-              <ContactBox>
-                <Subheading className="contact">.Contact</Subheading>
-              </ContactBox>
-            </LinkWrap>
-          </InnerWrapper>
-          <div>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </div>
-        </Footer>
-      </Wrapper>
-    )
+  if (location.pathname === rootPath) {
+    mainContent = <MainArea>{children}</MainArea>
   }
+
+  const darkMode = useDarkMode(false)
+
+  const [isToggled, setToggled] = useState(true)
+  const toggleTrueFalse = () => {
+    setToggled(!isToggled)
+    return isToggled ? darkMode.enable() : darkMode.disable()
+  }
+
+  return (
+    <Wrapper>
+      <header>
+        {header}
+        <button className="toggle-button" onClick={toggleTrueFalse}></button>
+      </header>
+      {mainContent}
+      <Footer>
+        <InnerWrapper>
+          <LinkWrap to={`/about`}>
+            <AboutBox className="about">
+              <Subheading>About.</Subheading>
+            </AboutBox>
+          </LinkWrap>
+          <LinkWrap to={`/contact`}>
+            <ContactBox className="contact">
+              <Subheading className="contact-txt">.Contact</Subheading>
+            </ContactBox>
+          </LinkWrap>
+        </InnerWrapper>
+        <div>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </div>
+      </Footer>
+    </Wrapper>
+  )
 }
 
 export default Layout
@@ -76,6 +86,12 @@ const Wrapper = styled.div`
   margin-right: auto;
   max-width: ${rhythm(40)};
   padding: ${rhythm(1.5)};
+
+  > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `
 
 const MainArea = styled.main`
@@ -128,6 +144,7 @@ const AboutBox = styled.div`
   background-size: 250%;
   box-shadow: 0px 5px 10px #e0e0e0;
   border-radius: 0.5rem;
+  padding: 0.5rem;
 `
 
 const ContactBox = styled.div`
@@ -137,6 +154,7 @@ const ContactBox = styled.div`
   background-size: 180%;
   box-shadow: 0px 5px 10px #e0e0e0;
   border-radius: 0.5rem;
+  padding: 0.5rem;
 `
 
 const Subheading = styled.h3`
@@ -146,7 +164,7 @@ const Subheading = styled.h3`
   font-weight: 200;
   margin: 0.5rem;
 
-  &.contact {
+  &.contact-txt {
     text-align: right;
   }
 `
