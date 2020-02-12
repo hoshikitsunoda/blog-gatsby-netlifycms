@@ -1,0 +1,37 @@
+body,
+footer {
+  transition: all 0.3s;
+}
+
+.toggle-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #1f1d1d;
+  margin-bottom: 1.5rem;
+  outline: none;
+  box-shadow: 0px 5px 10px #e0e0e0;
+}
+
+.dark-mode .toggle-button {
+  background-color: #fff;
+  box-shadow: 0px 5px 10px #000;
+}
+
+body.dark-mode,
+body.dark-mode footer,
+body.dark-mode .about,
+body.dark-mode .contact {
+  background-color: #1f1d1d;
+}
+
+body.dark-mode h1,
+body.dark-mode h3,
+body.dark-mode p {
+  color: #fff;
+}
+
+body.dark-mode .about,
+body.dark-mode .contact {
+  box-shadow: 0px 5px 10px #000;
+}
