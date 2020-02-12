@@ -53,7 +53,11 @@ const Layout = ({ location, children }) => {
     <Wrapper>
       <header>
         {header}
-        <button className="toggle-button" onClick={toggleTrueFalse}></button>
+        <input
+          type="checkbox"
+          className="toggle-button"
+          onClick={toggleTrueFalse}
+        />
       </header>
       {mainContent}
       <Footer>
